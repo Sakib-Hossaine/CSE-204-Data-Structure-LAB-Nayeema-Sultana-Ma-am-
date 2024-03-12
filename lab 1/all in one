@@ -1,0 +1,84 @@
+#include <bits/stdc++.h>
+using namespace std;
+// SAKIB-22201185; I include comments to make someone understand my code.
+// HAPPY CODING :)
+#define ll long long
+#define endl "\n"
+#define rep(i,n) for(int i=0;i<n;i++)
+#define reverse   for(int i = n-1; i >= 0; i--) \
+                                   {             \
+        cout << Array[i] << " ";} cout << endl;
+#define ull unsigned long long int
+#define fastios                   \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);
+  
+
+int main() {
+    // Task A
+    int staticArray[15];
+    for(int i = 0; i < 15; i++) {
+        cin >> staticArray[i];
+    }
+    for(int i = 0; i < 15; i++) {
+        cout << staticArray[i] << " ";
+    }
+    cout << endl;
+
+    // Task B
+    int n;
+    cin >> n;
+    int dynamicArray[n];
+    for(int i = 0; i < n; i++) {
+        cin >> dynamicArray[i];
+    }
+    for(int i = 0; i < n; i++) {
+        cout << dynamicArray[i] << " ";
+    }
+    cout << endl;
+
+    // Task 1
+    for(int i = n-1; i >= 0; i--) {
+        cout << dynamicArray[i] << " ";
+    }
+    cout << endl;
+
+    // Task 2
+    int index, value;
+    cin >> index >> value;
+    for(int i = n; i > index; i--) {
+        dynamicArray[i] = dynamicArray[i-1];
+    }
+    dynamicArray[index] = value;
+    n++;
+
+    // Task 3
+    cin >> index;
+    for(int i = index; i < n-1; i++) {
+        dynamicArray[i] = dynamicArray[i+1];
+    }
+    n--;
+
+    // Task 4
+    cin >> index >> value;
+    dynamicArray[index] = value;
+
+    // Task 5
+    int array1[5] = {1, 2, 3, 4, 5};
+    int array2[5] = {6, 7, 8, 9, 10};
+    int mergedArray[10];
+    for(int i = 0; i < 5; i++) {
+        mergedArray[i] = array1[i];
+        mergedArray[i+5] = array2[i];
+    }
+
+    // Task 6
+    int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int splitArray1[5], splitArray2[5];
+    for(int i = 0; i < 5; i++) {
+        splitArray1[i] = array[i];
+        splitArray2[i] = array[i+5];
+    }
+
+    return 0;
+}
